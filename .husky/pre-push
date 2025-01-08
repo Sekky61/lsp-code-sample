@@ -1,1 +1,1 @@
-CI=true pnpm run test --passWithNoTests --silent
+CI=true npm run test --passWithNoTests --silent

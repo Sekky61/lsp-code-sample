@@ -1,2 +1,2 @@
-pnpm run lint-staged
-pnpm run lint:types
+npm run lint-staged
+npm run lint:types
