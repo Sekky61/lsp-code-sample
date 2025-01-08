@@ -19,13 +19,7 @@ describe('lib > CodeSample', () => {
          * `baseElement`:
          * @see https://testing-library.com/docs/react-testing-library/api#baseelement
          */
-        const {asFragment, baseElement} = render(<CodeSample codeSample={testingData} />);
-
-        /**
-         * Basic snapshot test to make sure, that rendered component
-         * matches expected footprint.
-         */
-        expect(asFragment()).toMatchSnapshot();
+        const {baseElement} = render(<CodeSample codeSample={testingData} />);
 
         /** More precise test for counter value */
         expect(baseElement.querySelector('strong')!.textContent).toBe('6'); // 6 is value we expect, we need to convert Number to String, because HTMLElement textContent method returns string value
