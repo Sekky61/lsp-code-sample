@@ -1,6 +1,9 @@
 import {render, fireEvent} from '@testing-library/react';
 
+import json1 from './__tests__/testingData.json';
 import {CodeSample} from './CodeSample';
+
+const testingData = json1 as unknown as CodeSample;
 
 describe('lib > CodeSample', () => {
     /**
@@ -16,7 +19,7 @@ describe('lib > CodeSample', () => {
          * `baseElement`:
          * @see https://testing-library.com/docs/react-testing-library/api#baseelement
          */
-        const {asFragment, baseElement} = render(<CodeSample initialValue={6} />);
+        const {asFragment, baseElement} = render(<CodeSample codeSample={testingData} />);
 
         /**
          * Basic snapshot test to make sure, that rendered component
@@ -35,7 +38,7 @@ describe('lib > CodeSample', () => {
          * `getByRole`:
          * @see https://testing-library.com/docs/dom-testing-library/api-queries#byrole
          */
-        const {getByRole, baseElement} = render(<CodeSample initialValue={value} />);
+        const {getByRole, baseElement} = render(<CodeSample codeSample={testingData} />);
 
         /**
          * Search for the button and make testing library click on it

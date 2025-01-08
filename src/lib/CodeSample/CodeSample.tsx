@@ -1,34 +1,11 @@
 import type {FC} from 'react';
-import {useEffect} from 'react';
-import {throttle} from 'lodash';
 
 import classes from './CodeSample.module.css';
-import useLogic from './useLogic';
 
 export type Props = {
-    /** Set initial value */
-    initialValue?: number;
+    codeSample?: CodeSample;
 };
 
-export const CodeSample: FC<Props> = ({initialValue = 0}) => {
-    const {count, incrementCount} = useLogic(initialValue);
-
-    useEffect(() => {
-        const runner = throttle(() => {
-            console.log('throttle');
-        }, 10);
-        runner();
-    }, []);
-
-    return (
-        <div className={classes.counter}>
-            <h2 className={classes.header}>CodeSample</h2>
-            <button className={classes.button} type="button" onClick={incrementCount}>
-                Increment by one
-            </button>
-            <div>
-                Total value: <strong>{count}</strong>
-            </div>
-        </div>
-    );
+export const CodeSample: FC<Props> = ({codeSample}) => {
+    return <div className={classes.counter}>{codeSample?.code}</div>;
 };

@@ -1,0 +1,348 @@
+{
+  "range": [
+    48,
+    49
+  ],
+  "code": "    try testPositionToIndex(\"\\n\", 0, 0, .{ 1, 1, 1 });",
+  "hover": [
+    {
+      "range": {
+        "start": {
+          "character": 8,
+          "line": 48
+        },
+        "end": {
+          "character": 27,
+          "line": 48
+        }
+      },
+      "contents": {
+        "value": "```zig\nfn testPositionToIndex(text: []const u8, index: usize, line: u32, characters: [3]u32) !void\n```",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 34,
+          "line": 48
+        },
+        "end": {
+          "character": 35,
+          "line": 48
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b0   |\n| OCT  | 0o0   |\n| DEC  | 0     |\n| HEX  | 0x0   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 37,
+          "line": 48
+        },
+        "end": {
+          "character": 38,
+          "line": 48
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b0   |\n| OCT  | 0o0   |\n| DEC  | 0     |\n| HEX  | 0x0   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 43,
+          "line": 48
+        },
+        "end": {
+          "character": 44,
+          "line": 48
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b1   |\n| OCT  | 0o1   |\n| DEC  | 1     |\n| HEX  | 0x1   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 46,
+          "line": 48
+        },
+        "end": {
+          "character": 47,
+          "line": 48
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b1   |\n| OCT  | 0o1   |\n| DEC  | 1     |\n| HEX  | 0x1   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 49,
+          "line": 48
+        },
+        "end": {
+          "character": 50,
+          "line": 48
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b1   |\n| OCT  | 0o1   |\n| DEC  | 1     |\n| HEX  | 0x1   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 8,
+          "line": 49
+        },
+        "end": {
+          "character": 27,
+          "line": 49
+        }
+      },
+      "contents": {
+        "value": "```zig\nfn testPositionToIndex(text: []const u8, index: usize, line: u32, characters: [3]u32) !void\n```",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 34,
+          "line": 49
+        },
+        "end": {
+          "character": 35,
+          "line": 49
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b0   |\n| OCT  | 0o0   |\n| DEC  | 0     |\n| HEX  | 0x0   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 37,
+          "line": 49
+        },
+        "end": {
+          "character": 38,
+          "line": 49
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b0   |\n| OCT  | 0o0   |\n| DEC  | 0     |\n| HEX  | 0x0   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 43,
+          "line": 49
+        },
+        "end": {
+          "character": 44,
+          "line": 49
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b10  |\n| OCT  | 0o2   |\n| DEC  | 2     |\n| HEX  | 0x2   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 46,
+          "line": 49
+        },
+        "end": {
+          "character": 47,
+          "line": 49
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b10  |\n| OCT  | 0o2   |\n| DEC  | 2     |\n| HEX  | 0x2   |",
+        "kind": "markdown"
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "character": 49,
+          "line": 49
+        },
+        "end": {
+          "character": 50,
+          "line": 49
+        }
+      },
+      "contents": {
+        "value": "| Base | Value |\n| ---- | ----- |\n| BIN  | 0b10  |\n| OCT  | 0o2   |\n| DEC  | 2     |\n| HEX  | 0x2   |",
+        "kind": "markdown"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "keyword",
+      "line": 48,
+      "marked": true,
+      "end_col": 7,
+      "start_col": 4
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "function",
+      "line": 48,
+      "marked": true,
+      "end_col": 27,
+      "start_col": 8
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "string",
+      "line": 48,
+      "marked": true,
+      "end_col": 32,
+      "start_col": 28
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 48,
+      "marked": true,
+      "end_col": 35,
+      "start_col": 34
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 48,
+      "marked": true,
+      "end_col": 38,
+      "start_col": 37
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 48,
+      "marked": true,
+      "end_col": 44,
+      "start_col": 43
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 48,
+      "marked": true,
+      "end_col": 47,
+      "start_col": 46
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 48,
+      "marked": true,
+      "end_col": 50,
+      "start_col": 49
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "keyword",
+      "line": 49,
+      "marked": true,
+      "end_col": 7,
+      "start_col": 4
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "function",
+      "line": 49,
+      "marked": true,
+      "end_col": 27,
+      "start_col": 8
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "string",
+      "line": 49,
+      "marked": true,
+      "end_col": 32,
+      "start_col": 28
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 49,
+      "marked": true,
+      "end_col": 35,
+      "start_col": 34
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 49,
+      "marked": true,
+      "end_col": 38,
+      "start_col": 37
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 49,
+      "marked": true,
+      "end_col": 44,
+      "start_col": 43
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 49,
+      "marked": true,
+      "end_col": 47,
+      "start_col": 46
+    },
+    {
+      "client_id": 1,
+      "modifiers": [],
+      "type": "number",
+      "line": 49,
+      "marked": true,
+      "end_col": 50,
+      "start_col": 49
+    }
+  ],
+  "version": "1"
+}
