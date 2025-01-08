@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib > Counter renders without crashing 1`] = `
+exports[`lib > CodeSample renders without crashing 1`] = `
 <DocumentFragment>
   <div>
     <h2>
-      Counter
+      CodeSample
     </h2>
     <button
       type="button"
@@ -12,7 +12,7 @@ exports[`lib > Counter renders without crashing 1`] = `
       Increment by one
     </button>
     <div>
-      Total value: 
+      Total value:
       <strong>
         6
       </strong>

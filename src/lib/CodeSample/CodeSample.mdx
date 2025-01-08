@@ -1,0 +1,25 @@
+import { Meta, ArgTypes, Story } from "@storybook/blocks";
+import * as CodeSampleStories from './CodeSample.stories';
+import { CodeSample } from "./CodeSample";
+
+<Meta title="Example/CodeSample" component={CodeSample} />
+
+# Example Component Demo
+
+## CodeSample props
+
+<ArgTypes of={CodeSample} />
+
+## Description
+
+`CodeSample` component provides user basic interface to increment counter by one.
+
+## Demo
+
+<Story of={CodeSampleStories.ExampleCodeSample} />
+
+## With initial value
+
+This is another example with initial value
+
+<Story of={CodeSampleStories.ExampleCodeSampleWithInitialValue} />

@@ -1,8 +1,8 @@
 import {render, fireEvent} from '@testing-library/react';
 
-import {Counter} from './Counter';
+import {CodeSample} from './CodeSample';
 
-describe('lib > Counter', () => {
+describe('lib > CodeSample', () => {
     /**
      * Jest hook which runs before each test,
      * @see https://jestjs.io/docs/en/api#beforeeachfn-timeout
@@ -16,7 +16,7 @@ describe('lib > Counter', () => {
          * `baseElement`:
          * @see https://testing-library.com/docs/react-testing-library/api#baseelement
          */
-        const {asFragment, baseElement} = render(<Counter initialValue={6} />);
+        const {asFragment, baseElement} = render(<CodeSample initialValue={6} />);
 
         /**
          * Basic snapshot test to make sure, that rendered component
@@ -35,7 +35,7 @@ describe('lib > Counter', () => {
          * `getByRole`:
          * @see https://testing-library.com/docs/dom-testing-library/api-queries#byrole
          */
-        const {getByRole, baseElement} = render(<Counter initialValue={value} />);
+        const {getByRole, baseElement} = render(<CodeSample initialValue={value} />);
 
         /**
          * Search for the button and make testing library click on it

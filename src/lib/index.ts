@@ -1,1 +1,1 @@
-export {Counter} from './CounterDemo';
+export {CodeSample} from './CodeSample';
