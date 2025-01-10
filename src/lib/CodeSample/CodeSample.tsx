@@ -1,5 +1,8 @@
 import type {FC} from 'react';
 
+import classes from './CodeSample.module.css';
+import {CopyButton} from './CopyButton';
+
 /**
  * represents the main structure of the json.
  */
@@ -134,8 +137,6 @@ export type Token = {
     end_col: number;
 };
 
-import classes from './CodeSample.module.css';
-
 export type Props = {
     codeSample?: CodeSampleObject;
     copyButton?: React.ReactNode;
@@ -148,15 +149,7 @@ export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
     const tokens = Object.groupBy(codeSample?.tokens ?? [], ({line}) => line);
     Object.values(tokens).forEach(arr => arr?.sort((a, b) => a.start_col - b.start_col));
 
-    const copyCodeClipboard = () => {
-        navigator.clipboard.writeText(code);
-    };
-
-    const copy = copyButton ?? (
-        <button className={classes.copybutton} type="button" onClick={copyCodeClipboard}>
-            Copy
-        </button>
-    );
+    const copy = copyButton ?? <CopyButton code={code} />;
 
     return (
         <div className={classes.codesample}>

@@ -1,2 +1,2 @@
-export {CodeSample} from './CodeSample';
+export {CodeSample, type CodeSampleObject} from './CodeSample';
 export * from './CodeSampleHelpers';

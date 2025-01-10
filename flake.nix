@@ -13,7 +13,7 @@
       devShells = eachSystem (pkgs: {
         default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            nodejs
+            nodejs_23
             husky
           ];
         };
