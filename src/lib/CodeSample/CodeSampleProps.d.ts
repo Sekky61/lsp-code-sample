@@ -34,7 +34,7 @@ export type CodeSampleObject = {
 /**
  * represents hover information for a specific range of code.
  */
-type HoverInfo = {
+export type HoverInfo = {
     /**
      * the range in the code where the hover is relevant.
      */
@@ -49,7 +49,7 @@ type HoverInfo = {
 /**
  * defines a range in the code by start and end positions.
  */
-type CodeRange = {
+export type CodeRange = {
     /**
      * starting position of the range.
      */
@@ -64,7 +64,7 @@ type CodeRange = {
 /**
  * represents a specific position in the code.
  */
-type CodePosition = {
+export type CodePosition = {
     /**
      * the character position in the line.
      */
@@ -79,7 +79,7 @@ type CodePosition = {
 /**
  * defines the contents of a hover tooltip.
  */
-type HoverContents = {
+export type HoverContents = {
     /**
      * the text content of the hover tooltip.
      * typically formatted in markdown.
@@ -95,7 +95,7 @@ type HoverContents = {
 /**
  * represents a syntax token in the document.
  */
-type Token = {
+export type Token = {
     /**
      * id of the client that marked the token.
      */
