@@ -3,13 +3,15 @@
  */
 type CodeSample = {
     /**
-     * the range of lines covered in the document.
+     * the zero based range of lines covered in the document.
      * contains start and end line numbers.
+     * End is exclusive.
+     * One is added by the component to display one-based line numbers.
      */
     range: [number, number];
 
     /**
-     * the code snippet associated with the range.
+     * the code snippet of the range.
      */
     code: string;
 
@@ -24,7 +26,7 @@ type CodeSample = {
     tokens: Token[];
 
     /**
-     * version of the data or document.
+     * version of the data structure.
      */
     version: string;
 };

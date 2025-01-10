@@ -1,6 +1,7 @@
 import {render, fireEvent} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import json1 from './__tests__/testingData.json';
+import * as json1 from './__tests__/testingData.json';
 import {CodeSample} from './CodeSample';
 
 const testingData = json1 as unknown as CodeSample;
@@ -12,27 +13,28 @@ describe('lib > CodeSample', () => {
      */
     beforeEach(() => {});
 
-    it('renders without crashing', () => {
+    it('renders empty without crashing', () => {
         /**
          * `asFragment`:
          * @see https://testing-library.com/docs/react-testing-library/api#asfragment
          * `baseElement`:
          * @see https://testing-library.com/docs/react-testing-library/api#baseelement
          */
-        const {baseElement} = render(<CodeSample codeSample={testingData} />);
-
-        /** More precise test for counter value */
-        expect(baseElement.querySelector('strong')!.textContent).toBe('6'); // 6 is value we expect, we need to convert Number to String, because HTMLElement textContent method returns string value
+        const {baseElement} = render(<CodeSample />);
+        expect(baseElement.querySelector('pre')!.textContent).toBe('');
     });
 
-    it('changes counter value on button click', () => {
-        const value = 1;
+    it('renders one line without crashing', () => {
+        const {baseElement} = render(<CodeSample codeSample={testingData} />);
+        expect(baseElement.querySelector('pre')!.textContent).toBe(testingData.code);
+    });
 
-        /**
-         * `getByRole`:
-         * @see https://testing-library.com/docs/dom-testing-library/api-queries#byrole
-         */
-        const {getByRole, baseElement} = render(<CodeSample codeSample={testingData} />);
+    it('copies code on button click', async () => {
+        userEvent.setup({
+            writeToClipboard: true,
+        });
+
+        const {getByRole} = render(<CodeSample codeSample={testingData} />);
 
         /**
          * Search for the button and make testing library click on it
@@ -40,7 +42,7 @@ describe('lib > CodeSample', () => {
          */
         fireEvent.click(getByRole('button'));
 
-        /** Check if counter was incremented  */
-        expect(baseElement.querySelector('strong')!.textContent).toBe(`${value + 1}`);
+        const copiedText = await window.navigator.clipboard.readText();
+        expect(copiedText).toBe(testingData.code);
     });
 });
