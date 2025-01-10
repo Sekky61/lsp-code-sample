@@ -1,3 +1,5 @@
+'use client';
+
 import classes from './CodeSample.module.css';
 
 /**

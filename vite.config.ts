@@ -1,5 +1,6 @@
 import {resolve} from 'path';
 
+import preserveDirectives from 'rollup-preserve-directives';
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 import hq from 'alias-hq';
@@ -12,12 +13,12 @@ export default defineConfig({
     resolve: {
         alias: hq.get('rollup'),
     },
-    plugins: [react(), dts({rollupTypes: true, exclude: ['**/*.stories.(ts|tsx)']})],
+    plugins: [react(), dts({rollupTypes: true, exclude: ['**/*.stories.(ts|tsx)']}), preserveDirectives()],
     build: {
         sourcemap: true,
         lib: {
             // Could also be a dictionary or array of multiple entry points
-            entry: resolve(__dirname, 'src/lib/index.ts'),
+            entry: [resolve(__dirname, 'src/lib/index.ts'), resolve(__dirname, 'src/lib/CodeSample/CopyButton.tsx')],
             name: 'LspCodeSample',
             // the proper extensions will be added
             fileName: 'index',
