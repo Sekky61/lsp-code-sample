@@ -1,7 +1,7 @@
 /**
  * represents the main structure of the json.
  */
-type CodeSample = {
+export type CodeSampleObject = {
     /**
      * the zero based range of lines covered in the document.
      * contains start and end line numbers.

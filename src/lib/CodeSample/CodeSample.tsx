@@ -1,9 +1,11 @@
 import type {FC} from 'react';
 
+import type {CodeSampleObject, Token} from '@/lib/CodeSample/CodeSampleProps';
+
 import classes from './CodeSample.module.css';
 
 export type Props = {
-    codeSample?: CodeSample;
+    codeSample?: CodeSampleObject;
     copyButton?: React.ReactNode;
 };
 
@@ -13,7 +15,6 @@ export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
     const firstLine = codeSample?.range[0] ?? 1;
     const tokens = Object.groupBy(codeSample?.tokens ?? [], ({line}) => line);
     Object.values(tokens).forEach(arr => arr?.sort((a, b) => a.start_col - b.start_col));
-    console.log(tokens);
 
     const copyCodeClipboard = () => {
         navigator.clipboard.writeText(code);
