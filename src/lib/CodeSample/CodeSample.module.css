@@ -32,6 +32,14 @@ pre {
     color: var(--c-foreground);
     padding: 16px;
     padding-top: calc(24px + 32px);
+    position: relative;
+}
+
+.copybutton {
+    margin: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 /** Definitions for some of the tokens, rest may be user-defined */
