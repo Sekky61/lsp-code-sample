@@ -1,33 +1,101 @@
-.counter {
-    border: 1px solid lightgray;
-    font-family: sans-serif;
-    margin: 36px 24px;
-    padding: 24px;
-    text-align: center;
-    width: 240px;
+pre {
+    margin: 0;
 }
 
-.header {
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0 0 12px;
+/* code is one line */
+[data-line-number]::before {
+    content: attr(data-line-number);
 }
 
-.button {
-    background: lightseagreen;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    display: block;
-    font-size: 16px;
-    margin: 0 auto 24px;
-    padding: 12px 24px;
-    text-shadow: 1px 1px 1px rgb(0 0 0 / 50%);
+.codesample {
+    --c-background: #1f1f1f;
+    --c-foreground: #ccc;
+    --c-token-string: #ce9178;
+    --c-token-number: #b5cea8;
+    --c-token-function: #dcdcaa;
+    --c-token-class: #4ec9b0;
+    --c-token-type: #4ec9b0;
+    --c-token-namespace: #4ec9b0;
+    --c-token-attribute: #4ec9b0;
+    --c-token-cast: #4ec9b0;
+    --c-token-keyword: #c586c0;
+    --c-token-operator-new: #c586c0;
+    --c-token-keyword-delete: #c586c0;
+    --c-token-variable: #9cdcfe;
+    --c-token-info: #6796e6;
+    --c-token-warn: #cd9731;
+    --c-token-error: #f44747;
+    --c-token-debug: #b267e6;
+
+    background: var(--c-background);
+    border-radius: 4px;
+    color: var(--c-foreground);
+    padding: 16px;
+    padding-top: calc(24px + 32px);
 }
 
-.button:active {
-    left: 1px;
-    position: relative;
-    top: 1px;
+/** Definitions for some of the tokens, rest may be user-defined */
+
+[data-token*="function"] {
+    color: var(--c-token-function);
+}
+
+[data-token*="class"] {
+    color: var(--c-token-class);
+}
+
+[data-token*="type"] {
+    color: var(--c-token-type);
+}
+
+[data-token*="namespace"] {
+    color: var(--c-token-namespace);
+}
+
+[data-token*="attribute"] {
+    color: var(--c-token-attribute);
+}
+
+[data-token*="cast"] {
+    color: var(--c-token-cast);
+}
+
+[data-token*="keyword"] {
+    color: var(--c-token-keyword);
+}
+
+[data-token*="operator-new"] {
+    color: var(--c-token-operator-new);
+}
+
+[data-token*="keyword-delete"] {
+    color: var(--c-token-keyword-delete);
+}
+
+[data-token*="variable"] {
+    color: var(--c-token-variable);
+}
+
+[data-token*="string"] {
+    color: var(--c-token-string);
+}
+
+[data-token*="number"] {
+    color: var(--c-token-number);
+}
+
+[data-token*="info"] {
+    color: var(--c-token-info);
+}
+
+[data-token*="warn"] {
+    color: var(--c-token-warn);
+}
+
+[data-token*="error"] {
+    color: var(--c-token-error);
+}
+
+[data-token*="debug"] {
+    color: var(--c-token-debug);
 }
