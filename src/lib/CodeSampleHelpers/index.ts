@@ -1,4 +1,4 @@
-import type {CodeSampleObject} from '../CodeSample/CodeSampleProps';
+import type {CodeSampleObject} from '../CodeSample/CodeSample';
 
 /**
  * Convert simple string to props compatible with CodeSample

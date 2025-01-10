@@ -1,8 +1,9 @@
 import type {FC} from 'react';
 
-import {CodeSample} from '@/lib';
 import './index.css';
-import type {CodeSampleObject} from '@/lib/CodeSample/CodeSampleProps';
+
+import {CodeSample} from '@/lib';
+import type {CodeSampleObject} from '@/lib/CodeSample/CodeSample';
 
 import j from '../../lib/CodeSample/__tests__/testingData.json';
 

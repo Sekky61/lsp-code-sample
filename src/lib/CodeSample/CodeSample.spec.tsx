@@ -2,8 +2,8 @@ import {render, fireEvent} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as json1 from './__tests__/testingData.json';
+import type {CodeSampleObject} from './CodeSample';
 import {CodeSample} from './CodeSample';
-import type {CodeSampleObject} from './CodeSampleProps';
 
 const testingData = json1 as unknown as CodeSampleObject;
 
