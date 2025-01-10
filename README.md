@@ -13,3 +13,10 @@ Requires Node.js 21 in case the React component will be ran at server side (due 
 npm i lsp-code-sample
 ```
 
+## Usage
+
+The code sample component is a *server component*.
+However, the copy button needs interactivity and therefore it is
+a client component. You can substitute the button for your own if
+you have different requirements.
+
