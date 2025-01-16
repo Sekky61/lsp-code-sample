@@ -14,7 +14,7 @@ describe('lib > plain', () => {
         const codeSample = plain(code);
 
         expect(codeSample.code).toBe(code);
-        expect(codeSample.range).toEqual([1, 3]);
+        expect(codeSample.range).toEqual([0, 2]); // zero based, 1 is added in component
     });
 
     it('can be rendered with the component', () => {
@@ -26,5 +26,15 @@ describe('lib > plain', () => {
         // Each line
         expect(allLines[0]!.textContent).toBe(firstLine);
         expect(allLines[1]!.textContent).toBe(secondLine);
+    });
+
+    it('takes file_name as an option', () => {
+        const codeSample = plain(code, {file_name: 'foo'});
+        expect(codeSample.file_name).toEqual('foo');
+    });
+
+    it('takes start_line as an option', () => {
+        const codeSample = plain(code, {start_line: 8});
+        expect(codeSample.range).toEqual([8, 10]);
     });
 });
