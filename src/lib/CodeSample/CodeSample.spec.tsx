@@ -7,7 +7,7 @@ import {CodeSample} from './CodeSample';
 
 const testingData = json1 as unknown as CodeSampleObject;
 
-describe('lib > CodeSample', () => {
+describe('CodeSample', () => {
     /**
      * Jest hook which runs before each test,
      * @see https://jestjs.io/docs/en/api#beforeeachfn-timeout
@@ -46,4 +46,10 @@ describe('lib > CodeSample', () => {
         const copiedText = await window.navigator.clipboard.readText();
         expect(copiedText).toBe(testingData.code);
     });
+});
+
+describe('CodeSample > line numbers', () => {
+    // it('renders line "1" without specifying a range', () => {
+    //     // todo
+    // });
 });

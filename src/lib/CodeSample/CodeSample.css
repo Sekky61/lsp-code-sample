@@ -2,12 +2,18 @@ pre {
     margin: 0;
 }
 
-/* code is one line */
-[data-line-number]::before {
-    content: attr(data-line-number);
+code {
+    display: block;
 }
 
-.codesample {
+/* code is one line */
+[data-line-number]::before {
+    color: #6e7681;
+    content: attr(data-line-number);
+    margin-right: 6px;
+}
+
+.code-sample {
     --c-background: #1f1f1f;
     --c-foreground: #ccc;
     --c-token-string: #ce9178;
@@ -35,7 +41,7 @@ pre {
     position: relative;
 }
 
-.copybutton {
+.copy-button {
     margin: 8px;
     position: absolute;
     right: 0;

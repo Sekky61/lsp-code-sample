@@ -1,6 +1,7 @@
 import type {FC} from 'react';
 
 import './index.css';
+import '../../lib/CodeSample/CodeSample.css';
 
 import {CodeSample} from '@/lib';
 import type {CodeSampleObject} from '@/lib/CodeSample/CodeSample';

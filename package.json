@@ -7,7 +7,6 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
@@ -15,7 +14,8 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.umd.cjs"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "keywords": [
     "react",
@@ -30,6 +30,7 @@
     "dev": "vite",
     "clean:lib": "rm -rf dist",
     "build:lib": "vite build",
+    "build:lib:watch": "vite build --watch",
     "build": "run-s clean:lib build:lib",
     "lint:code": "eslint src/** --report-unused-disable-directives",
     "fix:code": "run-s 'lint:code --fix'",

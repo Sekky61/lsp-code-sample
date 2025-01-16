@@ -1,6 +1,6 @@
 import type {FC} from 'react';
+import './CodeSample.css';
 
-import classes from './CodeSample.module.css';
 import {CopyButton} from './CopyButton';
 
 /**
@@ -145,14 +145,14 @@ export type Props = {
 export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
     const code = codeSample?.code ?? '';
     const lines = code.split('\n') ?? [];
-    const firstLine = codeSample?.range[0] ?? 1;
+    const firstLine = codeSample?.range[0] ?? 0;
     const tokens = Object.groupBy(codeSample?.tokens ?? [], ({line}) => line);
     Object.values(tokens).forEach(arr => arr?.sort((a, b) => a.start_col - b.start_col));
 
     const copy = copyButton ?? <CopyButton code={code} />;
 
     return (
-        <div className={classes.codesample}>
+        <div className="code-sample">
             <pre>
                 {lines.map((line, i) => {
                     const lineNum = firstLine + i;
