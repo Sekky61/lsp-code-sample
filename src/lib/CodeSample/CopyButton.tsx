@@ -10,7 +10,7 @@ export const CopyButton = ({code}: {code: string}) => {
     };
 
     return (
-        <button className="copy-button" type="button" onClick={copyCodeClipboard}>
+        <button className="code-sample-copy-button" type="button" onClick={copyCodeClipboard}>
             Copy
         </button>
     );

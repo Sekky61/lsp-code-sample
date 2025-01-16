@@ -8,6 +8,11 @@ import {CopyButton} from './CopyButton';
  */
 export type CodeSampleObject = {
     /**
+     * The name of code sample or the name of a file.
+     */
+    file_name?: string;
+
+    /**
      * the zero based range of lines covered in the document.
      * contains start and end line numbers.
      * End is exclusive.
@@ -164,6 +169,7 @@ export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
                 })}
             </pre>
             {copy}
+            {codeSample?.file_name && <div className="code-sample-file-name">{codeSample?.file_name}</div>}
         </div>
     );
 };

@@ -41,10 +41,17 @@ code {
     position: relative;
 }
 
-.copy-button {
+.code-sample-copy-button {
     margin: 8px;
     position: absolute;
     right: 0;
+    top: 0;
+}
+
+.code-sample-file-name {
+    left: 0;
+    margin: 8px;
+    position: absolute;
     top: 0;
 }
 

@@ -46,6 +46,17 @@ describe('CodeSample', () => {
         const copiedText = await window.navigator.clipboard.readText();
         expect(copiedText).toBe(testingData.code);
     });
+
+    it('renders file name', () => {
+        /**
+         * `asFragment`:
+         * @see https://testing-library.com/docs/react-testing-library/api#asfragment
+         * `baseElement`:
+         * @see https://testing-library.com/docs/react-testing-library/api#baseelement
+         */
+        const {baseElement} = render(<CodeSample codeSample={testingData} />);
+        expect(baseElement.querySelector('.code-sample-file-name')!.textContent).toBe('file1');
+    });
 });
 
 describe('CodeSample > line numbers', () => {

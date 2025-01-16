@@ -20,3 +20,14 @@ However, the copy button needs interactivity and therefore it is
 a client component. You can substitute the button for your own if
 you have different requirements.
 
+### Customizing
+
+The component ships with a stylesheet:
+
+```js
+import 'lsp-code-sample/style.css';
+```
+
+The class names are not mangled, so you can quite easily enhance the style.
+This comes in handy especially for defining custom token types.
+
