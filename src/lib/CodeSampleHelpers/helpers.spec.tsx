@@ -4,7 +4,7 @@ import {plain} from '.';
 import {CodeSample} from '../CodeSample';
 
 const code = `const x = 8;
-console.log(x);`;
+afunction(x);`;
 
 const firstLine = code.split('\n')[0];
 const secondLine = code.split('\n')[1];

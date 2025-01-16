@@ -119,6 +119,7 @@ export default [
                     args: 'after-used',
                 },
             ],
+            'no-console': ['error'],
         },
     },
     /* Allow devDependencies imports for tests and config files */

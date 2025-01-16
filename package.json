@@ -33,7 +33,7 @@
     "build:lib:watch": "vite build --watch",
     "build": "run-s clean:lib build:lib",
     "lint:code": "eslint src/** --report-unused-disable-directives",
-    "fix:code": "run-s 'lint:code --fix'",
+    "fix:code": "run-s 'lint:code -- --fix'",
     "lint:types": "tsc --pretty --noEmit",
     "lint:style": "stylelint ./src/**/*.css",
     "fix:style": "run-s 'lint:style --fix'",

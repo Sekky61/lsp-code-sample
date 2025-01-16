@@ -9,7 +9,6 @@ import type {CodeSampleObject} from '@/lib/CodeSample/CodeSample';
 import j from '../../lib/CodeSample/__tests__/testingData.json';
 
 const App: FC = () => {
-    console.log(j);
     return (
         <div>
             <CodeSample codeSample={j as unknown as CodeSampleObject} />
