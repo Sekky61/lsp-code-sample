@@ -158,7 +158,7 @@ export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
 
     return (
         <div className="code-sample">
-            <pre>
+            <pre className="code-wrapper">
                 {lines.map((line, i) => {
                     const lineNum = firstLine + i;
                     return (

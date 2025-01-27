@@ -1,9 +1,11 @@
-pre {
+.code-wrapper {
     margin: 0;
 }
 
-code {
+/** Styling of a line */
+[data-line-number] {
     display: block;
+    white-space: pre-wrap;
 }
 
 /* code is one line */
