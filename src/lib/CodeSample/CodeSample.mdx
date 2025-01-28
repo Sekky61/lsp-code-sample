@@ -1,10 +1,12 @@
-import { Meta, ArgTypes, Story } from "@storybook/blocks";
+import { Meta, ArgTypes, Story, Markdown } from "@storybook/blocks";
 import * as CodeSampleStories from './CodeSample.stories';
 import { CodeSample } from "./CodeSample";
 
 <Meta title="Example/CodeSample" component={CodeSample} />
 
-# Example Component Demo
+# CodeSample Component
+
+Pass in an object describing a code sample and it will be rendered.
 
 ## CodeSample props
 
@@ -12,14 +14,90 @@ import { CodeSample } from "./CodeSample";
 
 ## Description
 
-`CodeSample` component provides user basic interface to increment counter by one.
+`CodeSample` component provides user with a code sample.
+The individual tokens have semantic data attributes, which can be used for styling.
+The component also includes a copy to clipboard button.
 
 ## Demo
 
 <Story of={CodeSampleStories.ExampleCodeSample} />
 
-## With initial value
+## Types
 
-This is another example with initial value
+Most of the fields are not necessary.
+They reflect neovims lsp output.
 
-<Story of={CodeSampleStories.ExampleCodeSampleWithInitialValue} />
+### CodeSampleObject
+
+
+represents the main structure of the json.
+
+| Property      | Type                | Description                                                                                     |
+|---------------|---------------------|-------------------------------------------------------------------------------------------------|
+| `file_name`   | `string` (optional) | the name of code sample or the name of a file.                                                 |
+| `range`       | `[number, number]`  | the zero-based range of lines covered in the document. end is exclusive.                       |
+| `code`        | `string`            | the code snippet of the range.                                                                |
+| `hover`       | `HoverInfo[]`       | hover information for various code elements.                                                  |
+| `tokens`      | `Token[]`           | tokens representing syntax elements in the document.                                          |
+| `version`     | `string`            | version of the data structure.                                                                |
+
+---
+
+### HoverInfo
+
+represents hover information for a specific range of code.
+
+| Property      | Type               | Description                                                 |
+|---------------|--------------------|-------------------------------------------------------------|
+| `range`       | `CodeRange`        | the range in the code where the hover is relevant.          |
+| `contents`    | `HoverContents`    | the contents to be displayed in the hover tooltip.          |
+
+---
+
+### CodeRange
+
+defines a range in the code by start and end positions.
+
+| Property      | Type            | Description                         |
+|---------------|-----------------|-------------------------------------|
+| `start`       | `CodePosition`  | starting position of the range.    |
+| `end`         | `CodePosition`  | ending position of the range.      |
+
+---
+
+### CodePosition
+
+represents a specific position in the code.
+
+| Property      | Type     | Description                     |
+|---------------|----------|---------------------------------|
+| `character`   | `number` | the character position in the line. |
+| `line`        | `number` | the line number.                   |
+
+---
+
+### HoverContents
+
+defines the contents of a hover tooltip.
+
+| Property      | Type         | Description                                                |
+|---------------|--------------|------------------------------------------------------------|
+| `value`       | `string`     | the text content of the hover tooltip. typically markdown. |
+| `kind`        | `'markdown'` | the format of the contents, e.g., markdown.               |
+
+---
+
+### Token
+
+represents a syntax token in the document.
+
+| Property      | Type       | Description                                      |
+|---------------|------------|--------------------------------------------------|
+| `client_id`   | `number`   | id of the client that marked the token.          |
+| `modifiers`   | `string[]` | additional modifiers applied to the token.       |
+| `type`        | `string`   | the type of the token, e.g., keyword, function.  |
+| `line`        | `number`   | the line where the token appears.                |
+| `marked`      | `boolean`  | whether the token is marked as significant.      |
+| `start_col`   | `number`   | the column where the token starts.               |
+| `end_col`     | `number`   | the column where the token ends.                 |
+

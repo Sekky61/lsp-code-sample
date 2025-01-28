@@ -142,19 +142,23 @@ export type Token = {
     end_col: number;
 };
 
+/** Props for the CodeSample component */
 export type Props = {
+    /** The code sample in object form */
     codeSample?: CodeSampleObject;
+    /** Optional custom copy button. A default one will be provided if undefined. */
     copyButton?: React.ReactNode;
 };
 
-export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
-    const code = codeSample?.code ?? '';
-    const lines = code.split('\n') ?? [];
-    const firstLine = codeSample?.range[0] ?? 0;
-    const tokens = Object.groupBy(codeSample?.tokens ?? [], ({line}) => line);
+export const CodeSample: FC<Props> = ({
+    codeSample = {code: '', range: [0, 1], tokens: [], file_name: undefined},
+    copyButton,
+}) => {
+    const code = codeSample.code;
+    const lines = code.split('\n');
+    const firstLine = codeSample.range[0];
+    const tokens = Object.groupBy(codeSample.tokens, ({line}) => line);
     Object.values(tokens).forEach(arr => arr?.sort((a, b) => a.start_col - b.start_col));
-
-    const copy = copyButton ?? <CopyButton code={code} />;
 
     return (
         <div className="code-sample">
@@ -168,7 +172,7 @@ export const CodeSample: FC<Props> = ({codeSample, copyButton}) => {
                     );
                 })}
             </pre>
-            {copy}
+            {copyButton ?? <CopyButton code={code} />}
             {codeSample?.file_name && <div className="code-sample-file-name">{codeSample?.file_name}</div>}
         </div>
     );

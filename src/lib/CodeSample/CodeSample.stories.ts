@@ -1,5 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
+const testingData = json1 as unknown as CodeSampleObject;
+
+import json1 from './__tests__/testingData.json';
+import type {CodeSampleObject} from './CodeSample';
 import {CodeSample} from './CodeSample';
 
 const meta = {
@@ -16,12 +20,12 @@ type Story = StoryObj<typeof meta>;
 
 export const ExampleCodeSample: Story = {
     args: {
-        initialValue: 0,
+        codeSample: testingData,
     },
 };
 
 export const ExampleCodeSampleWithInitialValue: Story = {
     args: {
-        initialValue: 11,
+        codeSample: testingData,
     },
 };
