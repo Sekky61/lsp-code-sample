@@ -7,6 +7,9 @@ object. The code is semantically highlighted.
 
 Requires Node.js 21 in case the React component will be ran at server side (due to `Object.groupBy`).
 
+Works well with:
+- [LSP Code Sample neovim plugin](https://github.com/Sekky61/lsp-sample-extractor.nvim)
+
 ## Installation
 
 ```bash
