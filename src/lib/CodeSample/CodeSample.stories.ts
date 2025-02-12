@@ -1,8 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 const testingData = json1 as unknown as CodeSampleObject;
+const testingDataNix = jsonnix as unknown as CodeSampleObject;
 
 import json1 from './__tests__/testingData.json';
+import jsonnix from './__tests__/nix.json';
 import type {CodeSampleObject} from './CodeSample';
 import {CodeSample} from './CodeSample';
 
@@ -24,8 +26,8 @@ export const ExampleCodeSample: Story = {
     },
 };
 
-export const ExampleCodeSampleWithInitialValue: Story = {
+export const ExampleCodeSampleNix: Story = {
     args: {
-        codeSample: testingData,
+        codeSample: testingDataNix,
     },
 };

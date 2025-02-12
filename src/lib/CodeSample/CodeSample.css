@@ -26,6 +26,7 @@
     --c-token-namespace: #4ec9b0;
     --c-token-attribute: #4ec9b0;
     --c-token-cast: #4ec9b0;
+    --c-token-comment: #6a9955;
     --c-token-keyword: #c586c0;
     --c-token-operator-new: #c586c0;
     --c-token-keyword-delete: #c586c0;
@@ -121,4 +122,12 @@
 
 [data-token*="debug"] {
     color: var(--c-token-debug);
+}
+
+[data-token*="property"] {
+    color: var(--c-token-attribute);
+}
+
+[data-token*="comment"] {
+    color: var(--c-token-comment);
 }
