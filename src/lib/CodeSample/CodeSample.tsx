@@ -2,6 +2,7 @@ import type {FC} from 'react';
 import './CodeSample.css';
 
 import {CopyButton} from './CopyButton';
+import {groupAndSortTokensByLine} from '../utils/tokenUtils';
 
 /**
  * represents the main structure of the json.
@@ -163,8 +164,7 @@ export const CodeSample: FC<Props> = ({codeSample = DEFAULT_CODE_SAMPLE, copyBut
     const code = codeSample.code;
     const lines = code.split('\n');
     const firstLine = codeSample.range[0];
-    const tokens = Object.groupBy(codeSample.tokens, ({line}) => line);
-    Object.values(tokens).forEach(arr => arr?.sort((a, b) => a.start_col - b.start_col));
+    const tokens = groupAndSortTokensByLine(codeSample.tokens);
 
     return (
         <div className="code-sample" {...divProps}>
