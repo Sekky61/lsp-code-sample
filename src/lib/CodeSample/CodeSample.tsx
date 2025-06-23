@@ -1,16 +1,21 @@
 import type {FC} from 'react';
 import './CodeSample.css';
 
-import {CopyButton} from './CopyButton';
-import {groupAndSortTokensByLine} from '../utils/tokenUtils';
 import type {CodeSampleObject, Token} from '../types';
+import {CopyToClipboardProvider} from '../CopyButton/CopyToClipboardProvider';
+import {renderCopyButton} from '../CopyButton/renderCopyButton';
+import {groupAndSortTokensByLine} from '../utils/tokenUtils';
 
 /** Props for the CodeSample component */
 export type Props = React.HTMLAttributes<HTMLDivElement> & {
     /** The code sample in object form */
     codeSample?: CodeSampleObject;
-    /** Optional custom copy button. A default one will be provided if undefined. */
-    copyButton?: React.ReactNode;
+    /** Render prop for custom copy button. Receives copy function and returns component. */
+    copyButton?: (props: CopyButtonProps) => React.ReactNode;
+};
+
+export type CopyButtonProps = {
+    copyFn: () => void;
 };
 
 const DEFAULT_CODE_SAMPLE = {
@@ -22,7 +27,11 @@ const DEFAULT_CODE_SAMPLE = {
     version: '',
 } satisfies CodeSampleObject;
 
-export const CodeSample: FC<Props> = ({codeSample = DEFAULT_CODE_SAMPLE, copyButton, ...divProps}) => {
+export const CodeSample: FC<Props> = ({
+    codeSample = DEFAULT_CODE_SAMPLE,
+    copyButton = renderCopyButton,
+    ...divProps
+}) => {
     const code = codeSample.code;
     const lines = code.split('\n');
     const firstLine = codeSample.range[0];
@@ -40,7 +49,7 @@ export const CodeSample: FC<Props> = ({codeSample = DEFAULT_CODE_SAMPLE, copyBut
                     );
                 })}
             </pre>
-            {copyButton ?? <CopyButton code={code} />}
+            <CopyToClipboardProvider code={code}>{copyButton}</CopyToClipboardProvider>
             {codeSample?.file_name && <div className="code-sample-file-name">{codeSample?.file_name}</div>}
         </div>
     );
