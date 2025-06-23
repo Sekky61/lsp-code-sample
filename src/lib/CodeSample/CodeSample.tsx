@@ -143,17 +143,23 @@ export type Token = {
 };
 
 /** Props for the CodeSample component */
-export type Props = {
+export type Props = React.HTMLAttributes<HTMLDivElement> & {
     /** The code sample in object form */
     codeSample?: CodeSampleObject;
     /** Optional custom copy button. A default one will be provided if undefined. */
     copyButton?: React.ReactNode;
 };
 
-export const CodeSample: FC<Props> = ({
-    codeSample = {code: '', range: [0, 1], tokens: [], file_name: undefined},
-    copyButton,
-}) => {
+const DEFAULT_CODE_SAMPLE = {
+    code: '',
+    range: [0, 1],
+    tokens: [],
+    file_name: undefined,
+    hover: [],
+    version: '',
+} satisfies CodeSampleObject;
+
+export const CodeSample: FC<Props> = ({codeSample = DEFAULT_CODE_SAMPLE, copyButton, ...divProps}) => {
     const code = codeSample.code;
     const lines = code.split('\n');
     const firstLine = codeSample.range[0];
@@ -161,7 +167,7 @@ export const CodeSample: FC<Props> = ({
     Object.values(tokens).forEach(arr => arr?.sort((a, b) => a.start_col - b.start_col));
 
     return (
-        <div className="code-sample">
+        <div className="code-sample" {...divProps}>
             <pre className="code-wrapper">
                 {lines.map((line, i) => {
                     const lineNum = firstLine + i;
