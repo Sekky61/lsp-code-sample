@@ -1,5 +1,5 @@
 import {groupAndSortTokensByLine} from './tokenUtils';
-import type {Token} from '../CodeSample/CodeSample';
+import type {Token} from '../types';
 
 describe('groupAndSortTokensByLine', () => {
     it('should return empty object for empty token array', () => {

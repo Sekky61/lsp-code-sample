@@ -2,7 +2,7 @@ import {render, fireEvent} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as json1 from './__tests__/testingData.json';
-import type {CodeSampleObject} from './CodeSample';
+import type {CodeSampleObject} from '../types';
 import {CodeSample} from './CodeSample';
 
 const testingData = json1 as unknown as CodeSampleObject;

@@ -4,7 +4,7 @@ import './index.css';
 import '../../lib/CodeSample/CodeSample.css';
 
 import {CodeSample} from '@/lib';
-import type {CodeSampleObject} from '@/lib/CodeSample/CodeSample';
+import type {CodeSampleObject} from '@/lib/types';
 
 import j from '../../lib/CodeSample/__tests__/testingData.json';
 

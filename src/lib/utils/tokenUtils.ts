@@ -1,4 +1,4 @@
-import type {Token} from '../CodeSample/CodeSample';
+import type {Token} from '../types';
 
 /**
  * Groups tokens by line number and sorts them by start column within each line.

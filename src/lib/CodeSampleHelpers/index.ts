@@ -1,4 +1,4 @@
-import type {CodeSampleObject} from '../CodeSample/CodeSample';
+import type {CodeSampleObject} from '../types';
 
 type PlainOptions = {
     file_name: string;

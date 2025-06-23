@@ -5,7 +5,7 @@ const testingDataNix = jsonnix as unknown as CodeSampleObject;
 
 import json1 from './__tests__/testingData.json';
 import jsonnix from './__tests__/nix.json';
-import type {CodeSampleObject} from './CodeSample';
+import type {CodeSampleObject} from '../types';
 import {CodeSample} from './CodeSample';
 
 const meta = {
