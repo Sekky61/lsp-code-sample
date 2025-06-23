@@ -9,7 +9,7 @@ import type {CodeSampleObject} from '../types';
 import {CodeSample} from './CodeSample';
 
 const meta = {
-    title: 'Example/CodeSample',
+    title: 'CodeSample',
     component: CodeSample,
     parameters: {
         // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout

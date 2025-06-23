@@ -1,138 +1,97 @@
 /**
- * represents the main structure of the json.
+ * TypeScript definitions for LSP code sample data structures.
+ * Used for rendering syntax-highlighted code with hover information and tokens.
+ */
+
+/**
+ * Main code sample data structure.
  */
 export type CodeSampleObject = {
-    /**
-     * The name of code sample or the name of a file.
-     */
+    /** Optional file name or code sample title */
     file_name?: string;
 
-    /**
-     * the zero based range of lines covered in the document.
-     * contains start and end line numbers.
-     * End is exclusive.
-     * One is added by the component to display one-based line numbers.
-     */
+    /** Zero-based line range [start, end) - end is exclusive */
     range: [number, number];
 
-    /**
-     * the code snippet of the range.
-     */
+    /** Source code content */
     code: string;
 
-    /**
-     * hover information for various code elements.
-     */
+    /** Hover tooltips for code elements */
     hover: HoverInfo[];
 
-    /**
-     * tokens representing syntax elements in the document.
-     */
+    /** Syntax highlighting tokens */
     tokens: Token[];
 
-    /**
-     * version of the data structure.
-     */
+    /** Data structure version */
     version: string;
 };
 
 /**
- * represents hover information for a specific range of code.
+ * Hover tooltip information for a code range.
  */
 export type HoverInfo = {
-    /**
-     * the range in the code where the hover is relevant.
-     */
+    /** Code range where hover applies */
     range: CodeRange;
 
-    /**
-     * the contents to be displayed in the hover tooltip.
-     */
+    /** Tooltip content */
     contents: HoverContents;
 };
 
 /**
- * defines a range in the code by start and end positions.
+ * Code range defined by start and end positions.
  */
 export type CodeRange = {
-    /**
-     * starting position of the range.
-     */
+    /** Range start position */
     start: CodePosition;
 
-    /**
-     * ending position of the range.
-     */
+    /** Range end position */
     end: CodePosition;
 };
 
 /**
- * represents a specific position in the code.
+ * Position in code (zero-based coordinates).
  */
 export type CodePosition = {
-    /**
-     * the character position in the line.
-     */
+    /** Character position within the line (0-based) */
     character: number;
 
-    /**
-     * the line number.
-     */
+    /** Line number (0-based) */
     line: number;
 };
 
 /**
- * defines the contents of a hover tooltip.
+ * Hover tooltip content.
  */
 export type HoverContents = {
-    /**
-     * the text content of the hover tooltip.
-     * typically formatted in markdown.
-     */
+    /** Markdown-formatted tooltip text */
     value: string;
 
-    /**
-     * the format of the contents, e.g., markdown.
-     */
+    /** Content format - currently only 'markdown' supported */
     kind: 'markdown';
 };
 
 /**
- * represents a syntax token in the document.
+ * Syntax highlighting token.
  */
 export type Token = {
-    /**
-     * id of the client that marked the token.
-     */
+    /** Client ID that created this token */
     client_id: number;
 
-    /**
-     * additional modifiers applied to the token.
-     */
+    /** Token modifiers (e.g., ['static', 'readonly']) */
     modifiers: string[];
 
-    /**
-     * the type of the token, e.g., keyword, function, string.
-     */
+    /** Token type (e.g., 'keyword', 'function', 'string') */
     type: string;
 
-    /**
-     * the line where the token appears.
-     */
+    /** Line number (0-based) */
     line: number;
 
-    /**
-     * whether the token is marked as significant.
-     */
+    /** Whether token is marked as significant */
     marked: boolean;
 
-    /**
-     * the column where the token starts.
-     */
+    /** Start column (0-based, inclusive) */
     start_col: number;
 
-    /**
-     * the column where the token ends.
-     */
+    /** End column (0-based, exclusive) */
     end_col: number;
 };
