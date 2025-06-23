@@ -187,12 +187,19 @@ type LineProps = {
 const Line: FC<LineProps> = ({children, lineNum, tokens}) => {
     if (typeof children !== 'string') throw new Error('Code line must be a string');
 
-    // substitute parts of line with tokens
-
-    return <code data-line-number={lineNum + 1}>{renderLineWithTokens(children, tokens)}</code>;
+    return (
+        <code data-line-number={lineNum + 1}>
+            <LineTokens line={children} tokens={tokens} />
+        </code>
+    );
 };
 
-const renderLineWithTokens = (line: string, tokens: Token[]) => {
+type LineTokensProps = {
+    line: string;
+    tokens: Token[];
+};
+
+const LineTokens: FC<LineTokensProps> = ({line, tokens}) => {
     // sort tokens by start_col to ensure proper order
 
     const elements = [];
@@ -220,5 +227,5 @@ const renderLineWithTokens = (line: string, tokens: Token[]) => {
         elements.push(line.slice(currentIndex));
     }
 
-    return elements;
+    return <>{elements}</>;
 };
